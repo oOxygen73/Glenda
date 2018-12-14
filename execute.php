@@ -21,7 +21,7 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao $firstname, benvenuto!";
 }
-elseif($text=="ciao")
+elseif(strpos($text, "Ciao") === 0 || $text=="Ciao $firstname, sono felice di vederti")
 {
 	$response = "Ciao, benvenuto $firstname";
 }
@@ -31,7 +31,7 @@ elseif($text=="oxy")
 }
 else
 {
-	$response = "Comando non valido!";
+	$response = "Scusa non ho Capito!";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
