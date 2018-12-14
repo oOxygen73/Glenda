@@ -1,38 +1,40 @@
 <?php
-$content = file_get_contents("php://input");
-$update = json_decode($content, true);
-if(!$update)
-{
-  exit;
-}
-$message = isset($update['message']) ? $update['message'] : "";
-$messageId = isset($message['message_id']) ? $message['message_id'] : "";
-$chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
-$firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
-$lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
-$username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
-$date = isset($message['date']) ? $message['date'] : "";
-$text = isset($message['text']) ? $message['text'] : "";
-$text = trim($text);
-$text = strtolower($text);
-header("Content-Type: application/json");
-$response = '';
-if(strpos($text, "/start") === 0 || $text=="ciao")
-{
-	$response = "Ciao $firstname, benvenuto!";
-}
-elseif(strpos($text, "Ciao") === 0 || $text=="Ciao $firstname, sono felice di vederti")
-{
-	$response = "Ciao, benvenuto $firstname";
-}
-elseif($text=="oxy")
-{
-	$response = "oOxygen è il mio Creatore";
-}
-else
-{
-	$response = "Scusa non ho Capito!";
-}
-$parameters = array('chat_id' => $chatId, "text" => $response);
-$parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+declare(strict_types = 1);
+include __DIR__.'/basics.php';
+use React\EventLoop\Factory;
+use unreal4u\TelegramAPI\HttpClientRequestHandler;
+use unreal4u\TelegramAPI\Telegram\Methods\SendMessage;
+use unreal4u\TelegramAPI\TgLog;
+$loop = Factory::create();
+$tgLog = new TgLog(BOT_TOKEN, new HttpClientRequestHandler($loop));
+$sendMessage = new SendMessage();
+$sendMessage->chat_id = A_USER_CHAT_ID;
+$sendMessage->text = 'Hello world to the user... from a specialized getMessage file';
+$promise = $tgLog->performApiRequest($sendMessage);
+$promise->then(
+    function ($response) {
+        echo '<pre>';
+        var_dump($response);
+        echo '</pre>';
+    },
+    function (\Exception $exception) {
+        // Onoes, an exception occurred...
+        echo 'Exception ' . get_class($exception) . ' caught, message: ' . $exception->getMessage();
+    }
+);
+$sendMessage = new SendMessage();
+$sendMessage->chat_id = A_GROUP_CHAT_ID;
+$sendMessage->text = 'And this is a hello to the group... also from a getMessage file';
+$promise = $tgLog->performApiRequest($sendMessage);
+$promise->then(
+    function ($response) {
+        echo '<pre>';
+        var_dump($response);
+        echo '</pre>';
+    },
+    function (\Exception $exception) {
+        // Onoes, an exception occurred...
+        echo 'Exception ' . get_class($exception) . ' caught, message: ' . $exception->getMessage();
+    }
+);
+$loop->run();
