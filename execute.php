@@ -21,17 +21,41 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao $firstname, benvenuto!";
 }
-elseif($text=="ciao")
+elseif($text=="ciao" or "Ciao")
 {
 	$response = "Ciao, benvenuto $firstname";
 }
-elseif($text=="oxy")
+elseif($text=="oxy" or "Oxy")
 {
 	$response = "oOxygen è il mio Creatore";
 }
+elseif($text=="sunlu" or "Sunlu")
+{
+	$response = "Hey, $firstname sai cosa ne Pensa oOxygen del Sunlu? Meglio se non te lo dico!";
+}
+elseif($text=="tianse" or "Tianse")
+{
+	$response = "Attento, $firstname sai cosa ne Pensa oOxygen del Tianse? Meglio se non te lo dico!";
+}
+elseif($text=="giada" or "Giada")
+{
+	$response = "Ciao, $firstname Tratta Bene Giada o te la Vedrai con oOxygen!";
+}
+elseif($text=="giadina" or "Giadina")
+{
+	$response = "Caro, $firstname Soltanto oOxygen puo' Chiamarla in Questo Modo!";
+}
+elseif($text=="ender" or "Ender")
+{
+	$response = "Caro, $firstname NON Sopporto piu Questo Modello di Stampante.";
+}
+elseif($text=="links" or "Links")
+{
+	$response = "Ciao, $firstname al Momento non ho Links da Darti.";
+}
 else
 {
-	$response = "Scusa non ho Capito...";
+	//$response = "Scusa non ho Capito!";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
