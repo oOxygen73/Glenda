@@ -21,35 +21,35 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao $firstname, benvenuto!";
 }
-elseif($text=="ciao" or "Ciao")
+elseif($text=="ciao" or $text=="Ciao")
 {
 	$response = "Ciao, benvenuto $firstname";
 }
-elseif($text=="oxy" or "Oxy")
+elseif($text=="oxy" or $text=="Oxy")
 {
 	$response = "oOxygen è il mio Creatore";
 }
-elseif($text=="sunlu" or "Sunlu")
+elseif($text=="sunlu" or $text=="Sunlu")
 {
 	$response = "Hey, $firstname sai cosa ne Pensa oOxygen del Sunlu? Meglio se non te lo dico!";
 }
-elseif($text=="tianse" or "Tianse")
+elseif($text=="tianse" or $text=="Tianse")
 {
 	$response = "Attento, $firstname sai cosa ne Pensa oOxygen del Tianse? Meglio se non te lo dico!";
 }
-elseif($text=="giada" or "Giada")
+elseif($text=="giada" or $text=="Giada")
 {
 	$response = "Ciao, $firstname Tratta Bene Giada o te la Vedrai con oOxygen!";
 }
-elseif($text=="giadina" or "Giadina")
+elseif($text=="giadina" or $text=="Giadina")
 {
 	$response = "Caro, $firstname Soltanto oOxygen puo' Chiamarla in Questo Modo!";
 }
-elseif($text=="ender" or "Ender")
+elseif($text=="ender" or $text=="Ender")
 {
 	$response = "Caro, $firstname NON Sopporto piu Questo Modello di Stampante.";
 }
-elseif($text=="links" or "Links")
+elseif($text=="links" or $text=="Links")
 {
 	$response = "Ciao, $firstname al Momento non ho Links da Darti.";
 }
