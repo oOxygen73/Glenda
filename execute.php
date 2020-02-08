@@ -57,7 +57,10 @@ elseif($text=="links" or $text=="Links")
 {
 	$response = "Ciao, $firstname al Momento non ho Links da Darti.";
 }
-
+elseif($text=="/glenda")
+{
+	$response = "Ciao, $firstname dimmi pure";
+}
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
