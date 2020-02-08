@@ -47,7 +47,7 @@ elseif($text=="giada" or $text=="Giada")
 }
 elseif($text=="giadina" or $text=="Giadina")
 {
-	$response = "Caro, $firstname Soltanto oOxygen e Daniele possono Chiamarla in Questo Modo!";
+	$response = "Hey che confidenza!, $firstname Soltanto oOxygen e Daniele possono Chiamarla in Questo Modo!";
 }
 elseif($text=="ender" or $text=="Ender")
 {
