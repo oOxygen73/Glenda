@@ -59,7 +59,7 @@ elseif($text=="links" or $text=="Links")
 }
 elseif($text=="/glenda")
 {
-	$response = "Ciao, $lastname dimmi pure";
+	$response = "$firstname Ciao, dimmi pure";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
