@@ -67,6 +67,11 @@ elseif($text=="links" or $text=="Links")
 	$response = "http://insane3dPrinting-forum.ooxygen.tech/ \nhttp://insane3d.ooxygen.tech";
 }
 
+elseif($text=="grazie glenda" or $text=="Grazie Glenda")
+{
+	$response = "Prego, quando vuoi sono qui per aiutarti :kissing_heart:";
+}
+
 elseif($text=="tools" or $text=="Tools")
 {
 	$response = "http://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
