@@ -69,7 +69,7 @@ elseif($text=="links" or $text=="Links")
 
 elseif($text=="grazie glenda" or $text=="Grazie Glenda")
 {
-	$response = "Prego, quando vuoi sono qui per aiutarti :kissing_heart:";
+	$response = "Prego, quando vuoi, sono qui per aiutarti :)";
 }
 
 elseif($text=="tools" or $text=="Tools")
