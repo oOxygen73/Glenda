@@ -23,7 +23,7 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 }
 elseif($text=="ciao" or $text=="Ciao")
 {
-	$response = "Ciao, benvenuto $first_name";
+	$response = "Ciao, benvenuto $firstname";
 }
 elseif($text=="glenda" or $text=="Glenda")
 {
@@ -55,7 +55,7 @@ elseif($text=="ender" or $text=="Ender")
 }
 elseif($text=="links" or $text=="Links")
 {
-	$response = "Ciao, $firstname al Momento non ho Links da Darti.";
+	$response = "http://3d-world.ooxygen.tech";
 }
 elseif($text=="/glenda")
 {
