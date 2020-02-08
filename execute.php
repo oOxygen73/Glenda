@@ -53,7 +53,7 @@ elseif($text=="ender" or $text=="Ender")
 {
 	$response = "Caro, $firstname NON Sopporto piu Questo Modello di Stampante.";
 }
-elseif($text=="links" or $text=="Links")
+elseif($text=="links" or $text=="Links" or "link" or "Link")
 {
 	$response = "http://3d-world.ooxygen.tech/forum.php \nhttp://3d-world.ooxygen.tech";
 }
