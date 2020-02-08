@@ -57,9 +57,19 @@ elseif($text=="links" or $text=="Links" or "link" or "Link")
 {
 	$response = "http://3d-world.ooxygen.tech/forum.php \nhttp://3d-world.ooxygen.tech";
 }
-elseif($text=="/glenda")
+elseif($text=="tools" or $text=="Tools")
 {
-	$response = "$firstname Ciao, dimmi pure";
+	$response = "http://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar\n
+http://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar\n
+http://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar\n
+http://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar\n
+http://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar\n
+http://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar\n
+http://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
+}
+elseif($text=="glenda" or $text=="Glenda")
+{
+	$response = "Ciao, i Miei Comandi Sono: \nTools\nLinks";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
