@@ -64,7 +64,7 @@ elseif($text=="glenda" or $text=="Glenda")
 
 elseif($text=="links" or $text=="Links")
 {
-	$response = "http://3d-world.ooxygen.tech/forum.php \nhttp://3d-world.ooxygen.tech";
+	$response = "http://insane3d-forum.ooxygen.tech/ \nhttp://insane3d.ooxygen.tech";
 }
 
 elseif($text=="tools" or $text=="Tools")
