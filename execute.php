@@ -47,7 +47,7 @@ elseif($text=="giada" or $text=="Giada")
 }
 elseif($text=="giadina" or $text=="Giadina")
 {
-	$response = "Caro, $firstname Soltanto oOxygen puo' Chiamarla in Questo Modo!";
+	$response = "Caro, $firstname Soltanto oOxygen puo Chiamarla in Questo Modo!";
 }
 elseif($text=="ender" or $text=="Ender")
 {
