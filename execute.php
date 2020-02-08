@@ -55,7 +55,7 @@ elseif($text=="ender" or $text=="Ender")
 }
 elseif($text=="links" or $text=="Links")
 {
-	$response = "http://3d-world.ooxygen.tech/forum.php \n http://3d-world.ooxygen.tech";
+	$response = "http://3d-world.ooxygen.tech/forum.php \nhttp://3d-world.ooxygen.tech";
 }
 elseif($text=="/glenda")
 {
