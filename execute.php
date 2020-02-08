@@ -69,7 +69,7 @@ http://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
 }
 elseif($text=="glenda" or $text=="Glenda")
 {
-	$response = "Ciao, i Miei Comandi Sono: \nTools\nLinks";
+	$response = "Ciao, i Miei Comandi Sono \nTools\nLinks";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
