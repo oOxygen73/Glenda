@@ -61,6 +61,11 @@ elseif($text=="glenda" or $text=="Glenda")
 {
 	$response = "Ciao, i Miei Comandi Sono \nTools\nLinks";
 }
+
+elseif($text=="links" or $text=="Links")
+{
+	$response = "http://3d-world.ooxygen.tech/forum.php \nhttp://3d-world.ooxygen.tech";
+}
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
