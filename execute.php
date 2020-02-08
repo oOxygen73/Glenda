@@ -25,10 +25,6 @@ elseif($text=="ciao" or $text=="Ciao")
 {
 	$response = "Ciao, benvenuto $firstname";
 }
-elseif($text=="glenda" or $text=="Glenda")
-{
-	$response = "Ciao, $firstname perché mi hai Chiamato?";
-}
 elseif($text=="oxy" or $text=="Oxy")
 {
 	$response = "oOxygen è il mio Creatore";
@@ -51,7 +47,7 @@ elseif($text=="giadina" or $text=="Giadina")
 }
 elseif($text=="ender" or $text=="Ender")
 {
-	$response = "Caro, $firstname NON Sopporto piu Questo Modello di Stampante.";
+	$response = "Carissimo, $firstname NON Sopporto piu Questo Modello di Stampante.";
 }
 elseif($text=="links" or $text=="Links" or "link" or "Link")
 {
@@ -59,13 +55,7 @@ elseif($text=="links" or $text=="Links" or "link" or "Link")
 }
 elseif($text=="tools" or $text=="Tools")
 {
-	$response = "http://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar\n
-http://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar\n
-http://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar\n
-http://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar\n
-http://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar\n
-http://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar\n
-http://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
+	$response = "http://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
 }
 elseif($text=="glenda" or $text=="Glenda")
 {
