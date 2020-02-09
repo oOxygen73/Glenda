@@ -15,13 +15,13 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi.";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi.";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
