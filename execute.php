@@ -13,7 +13,7 @@
 	
 	switch ($Message)
 	{
-		case '/start':
+		case '/start' or 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nCome Posso Esserti Utile? \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
