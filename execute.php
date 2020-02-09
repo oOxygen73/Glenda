@@ -13,7 +13,7 @@
 	
 	switch ($Message)
 	{
-		case 'Glenda' or 'glenda':
+		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nQuesto è Nitro Bot \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
