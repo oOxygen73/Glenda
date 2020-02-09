@@ -15,57 +15,6 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
-			break;
-			
-		case 'Glenda':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
-			break;
-			
-		case 'Links':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="$FirstName, sei Nel Master Menu. \nCosa Vuoi Fare? \n";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
-			break;
-
-		case 'Tools': // Command to show normal Keyboard
-			$msg = "Questo è il comando tastiera.";
-			showKeyboard($ChatID, $msg);
-			break;
-
-		case "Infos":
-			$msg = $ChatID;
-			sendMessage($ChatID, $msg);
-			break;
-
-		case "Tastiera Normale": // This is the same text inside a Keyboard
-			$msg = "Abracadabra la tastiera appare!";
-			showKeyboard($ChatID, $msg);
-			break;
-			
-		case "Nascondi Tastiera": // This is the same text inside a Keyboard
-		    //$msg = "Welcome $messageId! I'm a Tutorial Bot.";
-			 $message_body = "<b>Questi sono i tuoi dettagli</b> \n $FirstName \n $ChatID \n $messageId \n https://www.carspecs.us/photos/c8447c97e355f462368178b3518367824a757327-2000.jpg";
-<?php
-	
-	$botToken = "700987806:AAF5NVz_G8KrF6WWoFe9gvLcAkm6N39bePI"; // Api TOKEN to our bot
-	$website = "https://api.telegram.org/bot".$botToken;
-
-	$FilejSon = file_get_contents("php://input"); // Take the url input, in this case will be executed method getUpdates that return Update.
-	$FilejSon = json_decode($FilejSon, TRUE); // Decode the variable before because now we can search with key (because it's a dictionary)
-
-	$FirstName = $FilejSon["message"]["chat"]["first_name"]; // Get the name that user set
-	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
-	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
-    $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
-	
-	switch ($Message)
-	{
-		case '/start':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
 			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
