@@ -14,7 +14,7 @@
 	switch ($Message)
 	{
 		case '/start':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/Glenda.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nCome Posso Esserti Utile? \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
@@ -111,7 +111,7 @@
 	
 	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Tastiera%20Normale"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
+	$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Tastiera%20Normale"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
 	    file_get_contents($url);
 	}
