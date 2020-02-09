@@ -15,30 +15,30 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
 			$photoDesc ="Eccoti i Nostri Links. \nhttp://insane3dPrinting-forum.ooxygen.tech/ \nhttp://insane3d.ooxygen.tech";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			sendMessageImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case 'Tools': // Command to show normal Keyboard
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/StepCalculator.jpg"; 
 			$photoDesc ="Qui Troverai i Nostri Tools e le Utility. \nhttp://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			sendMessageImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case "Infos":
-			$message_body = "<b>Sono Glenda un Utility Bot Creato per Questo Gruppo</b>";
+			$message_body = "<b>Sono Glenda un Utility Bot Creato per Questo Gruppo. Apri una Chat con Me in Privato.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
@@ -50,12 +50,6 @@
 		case "Inline Keyboard": // This is the same text inside a Keyboard
 			$msg = "Abracadabra and inline keyboard will appear!";
 			inlineKeyboard($ChatID, $msg);
-			break;
-
-		case "Invia Immagine": // This is the same text inside a Keyboard
-			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/Nytrobot.jpg"; 
-			$photoDesc ="Benvenuto $FirstName, io Sono Nytrobot \n Come Posso Esserti Utile? \n";
-			sendImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		default:
@@ -82,6 +76,12 @@
 		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
+	}
+	
+	function sendMessageImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc);
+	    file_get_contents($url);
 	}
 	
 	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
