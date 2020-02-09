@@ -27,7 +27,7 @@
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
-			$photoDesc ="Eccoti i Nostri Links. \nhttp://insane3dPrinting-forum.ooxygen.tech/ \nhttp://insane3d.ooxygen.tech";
+			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech";
 			sendMessageImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
