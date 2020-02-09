@@ -15,13 +15,13 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono \nLinks \nTools \nInfos";
+			$photoDesc ="<b>Ciao $FirstName io Sono Glenda.</b> \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono \nLinks \nTools \nInfos";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
