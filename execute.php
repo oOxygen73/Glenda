@@ -15,7 +15,7 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
-			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nQuesto è Nitro Bot \n";
+			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nCome Posso Esserti Utile? \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
@@ -70,10 +70,6 @@
 			sendImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
-		default:
-			//$msg = "Comando Sconosciuto!";
-			//sendMessage($ChatID, $msg);
-			//break;
 	} 
 	
 
