@@ -13,8 +13,8 @@
 	
 	switch ($Message)
 	{
-		case 'Glenda':
-			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/Nytrobot.jpg"; 
+		case 'Glenda' or 'glenda':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nQuesto è Nitro Bot \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
@@ -70,6 +70,10 @@
 			sendImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
+		default:
+			$msg = "Comando Sconosciuto!";
+			sendMessage($ChatID, $msg);
+			break;
 	} 
 	
 
