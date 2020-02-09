@@ -19,7 +19,7 @@
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
-		case 'Master Menu':
+		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/photo_3.jpg"; 
 			$photoDesc ="$FirstName, sei Nel Master Menu. \nCosa Vuoi Fare? \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
@@ -84,7 +84,7 @@
 
 	function showKeyboard($chat_id, $text)
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Master%20Menu"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
 	}
