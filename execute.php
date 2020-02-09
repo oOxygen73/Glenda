@@ -1,81 +1,137 @@
 <?php
-$content = file_get_contents("php://input");
-$update = json_decode($content, true);
-if(!$update)
-{
-  exit;
-}
-$message = isset($update['message']) ? $update['message'] : "";
-$messageId = isset($message['message_id']) ? $message['message_id'] : "";
-$chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
-$firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
-$lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
-$username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
-$date = isset($message['date']) ? $message['date'] : "";
-$text = isset($message['text']) ? $message['text'] : "";
-$text = trim($text);
-$text = strtolower($text);
-header("Content-Type: application/json");
-$response = '';
-if(strpos($text, "/start") === 0 || $text=="ciao")
-{
-	$response = "Ciao $firstname, benvenuto!";
-}
+	
+	$botToken = "700987806:AAF5NVz_G8KrF6WWoFe9gvLcAkm6N39bePI"; // Api TOKEN to our bot
+	$website = "https://api.telegram.org/bot".$botToken;
 
-elseif($text=="ciao" or $text=="Ciao")
-{
-	$response = "Ciao, benvenuto $firstname";
-}
+	$FilejSon = file_get_contents("php://input"); // Take the url input, in this case will be executed method getUpdates that return Update.
+	$FilejSon = json_decode($FilejSon, TRUE); // Decode the variable before because now we can search with key (because it's a dictionary)
 
-elseif($text=="oxy" or $text=="Oxy")
-{
-	$response = "oOxygen è il mio Creatore";
-}
+	$FirstName = $FilejSon["message"]["chat"]["first_name"]; // Get the name that user set
+	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
+	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
+    $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
+	
+	switch ($Message)
+	{
+		case '/start':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
+			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nQuesto è Nitro Bot \n";
+			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			break;
+			
+		case 'Master Menu':
+			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/photo_3.jpg"; 
+			$photoDesc ="$FirstName, sei Nel Master Menu. \nCosa Vuoi Fare? \n";
+			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			break;
 
-elseif($text=="sunlu" or $text=="Sunlu")
-{
-	$response = "Hey, $firstname sai cosa ne Pensa oOxygen del Sunlu? Meglio se non te lo dico!";
-}
+		case 'Links Utili': // Command to show normal Keyboard
+			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/photo_3.jpg"; 
+			$photoDesc ="$FirstName, sei Nel Menu Links Utili. \nCosa Vuoi Fare? \n";
+			MenuUtilityLinks($ChatID, $photoUrl, $photoDesc);
+			break;
 
-elseif($text=="tianse" or $text=="Tianse")
-{
-	$response = "Attento, $firstname sai cosa ne Pensa oOxygen del Tianse? Meglio se non te lo dico!";
-}
+		case "Database Utenti":
+			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/photo_3.jpg"; 
+			$photoDesc ="$FirstName, sei Nel Menu Database Utenti. \nCosa Vuoi Fare? \n";
+			MenuDatabase($ChatID, $photoUrl, $photoDesc);
+			break;
 
-elseif($text=="giada" or $text=="Giada")
-{
-	$response = "Ciao, $firstname Tratta Bene Giada o te la Vedrai con oOxygen!";
-}
+		case "Glossario Stampa3D": // This is the same text inside a Keyboard
+			$msg = "Abracadabra la tastiera appare!";
+			showKeyboard($ChatID, $msg);
+			break;
+			
+		case "Info Bot": // This is the same text inside a Keyboard
+			$msg = "Abracadabra la tastiera appare!";
+			showKeyboard($ChatID, $msg);
+			break;
+			
+		case "Nascondi Tastiera": // This is the same text inside a Keyboard
+		    //$msg = "Welcome $messageId! I'm a Tutorial Bot.";
+			 $message_body = "<b>Questi sono i tuoi dettagli</b> \n $FirstName \n $ChatID \n $messageId \n https://www.carspecs.us/photos/c8447c97e355f462368178b3518367824a757327-2000.jpg";
+			sendMessageParseHtml($ChatID, $message_body);
+			break;
 
-elseif($text=="giadina" or $text=="Giadina")
-{
-	$response = "Hey che confidenza!, $firstname Soltanto oOxygen e Daniele possono Chiamarla in Questo Modo!";
-}
+		case "Inline Keyboard": // This is the same text inside a Keyboard
+			$msg = "Abracadabra and inline keyboard will appear!";
+			inlineKeyboard($ChatID, $msg);
+			break;
 
-elseif($text=="ender" or $text=="Ender")
-{
-	$response = "Carissimo, $firstname NON Sopporto piu Questo Modello di Stampante.";
-}
+		case "Rimuovi Tastiera": // This is the same text inside a Keyboard
+			//$msg = "Abracadabra la tastiera scompare!";
+			//removeKeyboard($ChatID, $msg);
+			//break;
+			deleteMessage($ChatID, "last");
+			
+		case "Invia Immagine": // This is the same text inside a Keyboard
+			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/Nytrobot.jpg"; 
+			$photoDesc ="Benvenuto $FirstName, io Sono Nytrobot \n Come Posso Esserti Utile? \n";
+			sendImage($ChatID, $photoUrl, $photoDesc);
+			break;
 
-elseif($text=="glenda" or $text=="Glenda")
-{
-	$response = "Ciao, i Miei Comandi Sono \nTools\nLinks";
-}
+		default:
+			//$msg = "Comando Sconosciuto!";
+			//sendMessage($ChatID, $msg);
+			//break;
+	} 
+	
 
-elseif($text=="links" or $text=="Links")
-{
-	$response = "http://insane3dPrinting-forum.ooxygen.tech/ \nhttp://insane3d.ooxygen.tech";
-}
+	function sendMessage($chat_id, $text)
+	{
+		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text);
+		file_get_contents($url);
+	}
 
-elseif($text=="grazie glenda" or $text=="Grazie Glenda")
-{
-	$response = "Prego, quando vuoi, sono qui per aiutarti :)";
-}
+	function sendMessageParseHtml($chat_id, $text)
+	{
+		$url = $GLOBALS[website]."/sendMessage?chat_id=$chat_id&parse_mode=HTML&text=".urlencode($text);
+		file_get_contents($url);
+	}
 
-elseif($text=="tools" or $text=="Tools")
-{
-	$response = "http://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
-}
-$parameters = array('chat_id' => $chatId, "text" => $response);
-$parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+	function showKeyboard($chat_id, $text)
+	{
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Master%20Menu"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
+		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
+		file_get_contents($url);
+	}
+
+	function removeKeyboard($chat_id, $text)
+	{
+		$jSonCodeKeyboard = '&reply_markup={"remove_keyboard":true}';
+		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
+		file_get_contents($url);
+	}
+
+	function inlineKeyboard($chat_id, $text) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+		$jSonCodeKeyboard = '&reply_markup={"inline_keyboard":[[{"text":"API%20Bot%20Telegram","url":"https://core.telegram.org/bots/api"},{"text":"Google","url":"https://www.google.com"}]]}';
+		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
+		file_get_contents($url);
+	}
+	
+	function deleteMessage($chat_id, $querymsgid) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=last";
+        file_get_contents($url);
+	}
+	
+	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc);
+	    file_get_contents($url);
+	}
+	
+	function MenuUtilityLinks($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Master%20Menu"],["Guide%20Base","Files%20Stl"],["Info%20Bot"]],"resize_keyboard":true}';
+	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
+	    file_get_contents($url);
+	}
+	
+	function MenuDatabase($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Master%20Menu"],["Inserisci%20Utente","Cerca%20Utente"],["Aggiorna%20Utente","Cancella%20Utente"]],"resize_keyboard":true}';
+	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
+	    file_get_contents($url);
+	}
