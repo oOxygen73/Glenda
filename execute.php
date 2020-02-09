@@ -14,13 +14,13 @@
 	switch ($Message)
 	{
 		case '/start':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nCome Posso Esserti Utile? \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Links':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Immagini/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
 			$photoDesc ="$FirstName, sei Nel Master Menu. \nCosa Vuoi Fare? \n";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
