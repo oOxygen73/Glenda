@@ -70,10 +70,6 @@
 			sendImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
-		default:
-			$msg = "Comando Sconosciuto!";
-			sendMessage($ChatID, $msg);
-			break;
 	} 
 	
 
