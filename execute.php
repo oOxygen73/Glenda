@@ -15,7 +15,7 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="<b>Ciao $FirstName io Sono Glenda.</b> \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
@@ -31,12 +31,12 @@
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
-		case '/keyboard': // Command to show normal Keyboard
+		case 'Tools': // Command to show normal Keyboard
 			$msg = "Questo è il comando tastiera.";
 			showKeyboard($ChatID, $msg);
 			break;
 
-		case "chatid":
+		case "Infos":
 			$msg = $ChatID;
 			sendMessage($ChatID, $msg);
 			break;
@@ -97,7 +97,7 @@
 	
 	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
 	    file_get_contents($url);
 	}
