@@ -38,18 +38,12 @@
 			break;
 
 		case "Infos":
-			$msg = $ChatID;
-			sendMessage($ChatID, $msg);
+			$message_body = "<b>Sono Glenda un Utility Bot Creato per Questo Gruppo</b>";
+			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
 		case "Help": // This is the same text inside a Keyboard
-			$msg = "Abracadabra la tastiera appare!";
-			showKeyboard($ChatID, $msg);
-			break;
-			
-		case "Nascondi Tastiera": // This is the same text inside a Keyboard
-		    //$msg = "Welcome $messageId! I'm a Tutorial Bot.";
-			 $message_body = "<b>Questi sono i tuoi dettagli</b> \n $FirstName \n $ChatID \n $messageId \n https://www.carspecs.us/photos/c8447c97e355f462368178b3518367824a757327-2000.jpg";
+			$message_body = "<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
@@ -58,12 +52,6 @@
 			inlineKeyboard($ChatID, $msg);
 			break;
 
-		case "Rimuovi Tastiera": // This is the same text inside a Keyboard
-			//$msg = "Abracadabra la tastiera scompare!";
-			//removeKeyboard($ChatID, $msg);
-			//break;
-			deleteMessage($ChatID, "last");
-			
 		case "Invia Immagine": // This is the same text inside a Keyboard
 			$photoUrl ="http://ooxygen.tech/Nytro_Bot/Immagini/Nytrobot.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Nytrobot \n Come Posso Esserti Utile? \n";
