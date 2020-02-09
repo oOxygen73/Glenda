@@ -27,13 +27,14 @@
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
-			$photoDesc ="Eccoti i Nostri Links. \nhttp://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
+			$photoDesc ="Eccoti i Nostri Links. \nhttp://insane3dPrinting-forum.ooxygen.tech/ \nhttp://insane3d.ooxygen.tech";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case 'Tools': // Command to show normal Keyboard
-			$msg = "Questo è il comando tastiera.";
-			showKeyboard($ChatID, $msg);
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/StepCalculator.jpg"; 
+			$photoDesc ="Qui Troverai i Nostri Tools e le Utility. \nhttp://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
+			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case "Infos":
