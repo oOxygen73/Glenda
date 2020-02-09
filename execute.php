@@ -16,13 +16,13 @@
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
 			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nCome Posso Esserti Utile? \n";
-			showKeyboard($ChatID, $photoUrl, $photoDesc);
+			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Benvenuto $FirstName, io Sono Glenda. \nCome Posso Esserti Utile? \n";
-			showKeyboard($ChatID, $photoUrl, $photoDesc);
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \n";
+			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Links':
@@ -90,7 +90,14 @@
 
 	function showKeyboard($chat_id, $text)
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links"],["Tools","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
+	}
+	
+	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
+	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
+	    file_get_contents($url);
 	}
