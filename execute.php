@@ -46,6 +46,11 @@
 			$message_body = "<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
+			
+		case "test": // This is the same text inside a Keyboard
+			$message_body = "<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b> <a href='https://www.w3schools.com/html/'>Visit our HTML tutorial</a> ";
+			sendMessageParseHtmlTest($ChatID, $message_body);
+			break;
 
 		case "Inline Keyboard": // This is the same text inside a Keyboard
 			$msg = "Abracadabra and inline keyboard will appear!";
@@ -66,6 +71,12 @@
 	}
 
 	function sendMessageParseHtml($chat_id, $text)
+	{
+		$url = $GLOBALS[website]."/sendMessage?chat_id=$chat_id&parse_mode=HTML&text=".urlencode($text);
+		file_get_contents($url);
+	}
+
+	function sendMessageParseHtmlTest($chat_id, $text)
 	{
 		$url = $GLOBALS[website]."/sendMessage?chat_id=$chat_id&parse_mode=HTML&text=".urlencode($text);
 		file_get_contents($url);
