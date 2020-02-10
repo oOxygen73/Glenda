@@ -15,7 +15,7 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nPuoi Usare il Menu qui Sotto.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
