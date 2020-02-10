@@ -15,19 +15,18 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Menu':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			$msg = "<b>Menu Attivato!</b>";
+			showKeyboard($ChatID, $msg);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
+			$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
@@ -57,6 +56,11 @@
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
 			$photoDesc ="<b>Eccoti i Nostri Links</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech/'>Insane3dPrinting Forum</a> \n<a href='http://insane3d.ooxygen.tech/'>Insane3dPrinting Downloads</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			break;
+
+		case 'Buongiorno':
+			$message_body = "<b>Buongiorno io Sono Glenda. \nPuoi Attivarmi Digitando il mio Nome.</b>";
+			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
 		case "Inline Keyboard": // This is the same text inside a Keyboard
@@ -97,8 +101,8 @@
 
 	function showKeyboard($chat_id, $text)
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links"],["Nascondi%20Tastiera","Rimuovi%20Tastiera"],["Invia%20Immagine"]],"resize_keyboard":true}';
-		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
+		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
 	}
 	
