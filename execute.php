@@ -14,25 +14,25 @@
 	switch ($Message)
 	{
 		case '/start':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.jpg"; 
 			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Menu':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.jpg"; 
 			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.jpg"; 
 			$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Links':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo2.png"; 
 			$photoDesc ="<b>Eccoti i Nostri Links</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech/'>Insane3dPrinting Forum</a> \n<a href='http://insane3d.ooxygen.tech/'>Insane3dPrinting Downloads</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
