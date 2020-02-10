@@ -27,7 +27,7 @@
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
-			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
+			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech";
 			sendMessageImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
@@ -48,9 +48,9 @@
 			break;
 			
 		case "test": // This is the same text inside a Keyboard
-			$message_body = "
-<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
-			sendMessageParseHtmlTest($ChatID, $message_body);
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
+			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech";
+			sendMessageImageTest($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case "Inline Keyboard": // This is the same text inside a Keyboard
@@ -81,6 +81,12 @@
 	{
 		$url = $GLOBALS[website]."/sendMessage?chat_id=$chat_id&parse_mode=HTML&text=".urlencode($text);
 		file_get_contents($url);
+	}
+
+	function sendMessageImageTest($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&parse_mode=HTML&caption=".urlencode($photoDesc);
+	    file_get_contents($url);
 	}
 
 	function showKeyboard($chat_id, $text)
