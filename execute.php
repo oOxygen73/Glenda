@@ -49,7 +49,7 @@
 			
 		case "test": // This is the same text inside a Keyboard
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
-			$photoDesc =" <a href='https://www.w3schools.com/html/'>Visit our HTML tutorial</a> ";
+			$photoDesc ="<b>Sono Glenda</b> \n<a href='https://www.w3schools.com/html/'>Visit our HTML tutorial</a> ";
 			sendMessageImageTest($ChatID, $photoUrl, $photoDesc);
 			break;
 
