@@ -27,7 +27,7 @@
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
-			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech";
+			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
 			sendMessageImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
@@ -49,7 +49,7 @@
 			
 		case "test": // This is the same text inside a Keyboard
 			$message_body = "
-<img src='http://ooxygen.tech/Glenda_Bot/Logo.png'> <b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
+<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
 			sendMessageParseHtmlTest($ChatID, $message_body);
 			break;
 
