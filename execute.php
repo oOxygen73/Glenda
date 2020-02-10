@@ -27,13 +27,13 @@
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
-			$photoDesc ="Eccoti i Nostri Links. \n Il Nostro Forum \nhttp://insane3dPrinting-forum.ooxygen.tech/ \n La Nostra Pagina per i Downloads \nhttp://insane3d.ooxygen.tech";
-			sendMessageImage($ChatID, $photoUrl, $photoDesc);
+			$photoDesc ="<b>Eccoti i Nostri Links</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech/'>Insane3dPrinting Forum</a> \n<a href='http://insane3d.ooxygen.tech/'>Insane3dPrinting Downloads</a>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case 'Tools': // Command to show normal Keyboard
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/StepCalculator.jpg"; 
-			$photoDesc ="Qui Troverai i Nostri Tools e le Utility. \nhttp://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar \nhttp://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar \nhttp://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar \nhttp://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar";
+			$photoDesc ="<b>Scarica i Nostri Tools</b> \n<a href='http://insane3d.ooxygen.tech/AppTools/Insane_Step_Calculator.rar'>Insane_Step_Calculator</a> \n<a href='http://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_30x30.rar'>Cubo_di_Calibrazione_30x30</a> \n<a href='http://insane3d.ooxygen.tech/AppTools/Cubo_di_Calibrazione_40x40.rar'>Cubo_di_Calibrazione_40x40</a>\n<a href='http://insane3d.ooxygen.tech/AppTools/Temp_Tower_Pla.rar'>Temp_Tower_Pla</a>\n<a href='http://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_2_Torri.rar'>Test_Retraction_a_2_Torri</a>\n<a href='http://insane3d.ooxygen.tech/AppTools/Test_Retraction_a_4_Torri.rar'>Test_Retraction_a_4_Torri</a>\n<a href='http://insane3d.ooxygen.tech/AppTools/Portachiavi_insane3d.rar'>Portachiavi_insane3d</a>";
 			sendMessageImage($ChatID, $photoUrl, $photoDesc);
 			break;
 
@@ -50,7 +50,7 @@
 		case "test": // This is the same text inside a Keyboard
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Logo.png"; 
 			$photoDesc ="<b>Eccoti i Nostri Links</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech/'>Insane3dPrinting Forum</a> \n<a href='http://insane3d.ooxygen.tech/'>Insane3dPrinting Downloads</a>";
-			sendMessageImageTest($ChatID, $photoUrl, $photoDesc);
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case "Inline Keyboard": // This is the same text inside a Keyboard
@@ -83,7 +83,7 @@
 		file_get_contents($url);
 	}
 
-	function sendMessageImageTest($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	function sendMessageImageAndLinks($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&parse_mode=HTML&caption=".urlencode($photoDesc);
 	    file_get_contents($url);
