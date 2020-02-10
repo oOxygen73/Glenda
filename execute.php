@@ -48,7 +48,8 @@
 			break;
 			
 		case "test": // This is the same text inside a Keyboard
-			$message_body = "<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
+			$message_body = "
+<img src='http://ooxygen.tech/Glenda_Bot/Logo.png'> <b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b> \n<a href='http://insane3dPrinting-forum.ooxygen.tech'>Visit our HTML tutorial</a>";
 			sendMessageParseHtmlTest($ChatID, $message_body);
 			break;
 
