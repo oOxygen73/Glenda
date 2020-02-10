@@ -15,14 +15,20 @@
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
+			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			break;
+			
+		case 'Menu':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
+			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
 			sendStartImage($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
-			$photoDesc ="Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.";
-			sendStartImage($ChatID, $photoUrl, $photoDesc);
+			$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nI Miei Comandi Sono: Links, Tools, Infos, Help, Menu \nPuoi Aprire una Chat Privata con me se Vuoi. \nSe ti Danno Fastidio i Tasti del Menu puoi Chiuderli cliccando sulla X, Oppure sulla Freccia che Punta Verso il Basso.</b>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Links':
@@ -38,12 +44,12 @@
 			break;
 
 		case "Infos":
-			$message_body = "<b>Sono Glenda un Utility Bot Creato per Questo Gruppo. Apri una Chat con Me in Privato.</b>";
+			$message_body = "<b>Sono Glenda un Utility Bot Creato per Questo Gruppo. \nApri una Chat con Me in Privato.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
 		case "Help": // This is the same text inside a Keyboard
-			$message_body = "<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito, Oppure Chiedere ai Membri del Nostro Staff.</b>";
+			$message_body = "<b>Se ti Serve Aiuto puoi Consultare il Nostro Sito. \nOppure Chiedere ai Membri del Nostro Staff.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
