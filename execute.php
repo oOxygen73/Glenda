@@ -33,37 +33,37 @@ if (strpos($a, 'oxy') !== false) {
 			
 		case 'Menu':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>Ciao io Sono Regan MacNeil. Non Posso Funzionare.</b>";
+			$photoDesc ="<b>Ciao io Sono Regan MacNeil. Posso solo darti il Menu per un Esorcismo.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Nothing':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>oOxygen non c'è! Non taggatelo, Grazie.</b>";
+			$photoDesc ="<b>oOxygen non è qui mi dispiace.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'NothingHere':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>oOxy non c'è mi dispiace, non so piu come dirvelo</b>";
+			$photoDesc ="<b>oOxy non c'è mi dispiace, non so piu come dirvelo!</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>Io Sono Regan MacNeil. \nNon Posso Esserti Utile e non Evocarmi.</b>";
+			$photoDesc ="<b>Io Sono Regan MacNeil non Glenda. \nNon Posso Esserti Utile e non Evocarmi.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Links':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>Non ho Links da Darti al Momento.</b>";
+			$photoDesc ="<b>Non ho Links da Darti al Momento a parte quello della chesa Cattolica.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 
 		case 'Tools': // Command to show normal Keyboard
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>Non ho Tools per te al Momento.</b>";
+			$photoDesc ="<b>Come Tools al Momento ho solo un Crocifisso.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 
