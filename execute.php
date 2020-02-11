@@ -13,7 +13,7 @@
 	
 	$a = $Message;
 
-if (strpos($a, '@oOxygen_Tech') !== false) {
+if (strpos($a, 'oOxygen_Tech') !== false) {
     //echo 'true';
 	$Message = 'Nothing';
 }
