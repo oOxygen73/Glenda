@@ -31,7 +31,7 @@ if (strpos($a, 'Giada') !== false) {
 	{
 		case '/start':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>Ciao io Sono Regan MacNeil. Non Posso Esserti Utile.</b>";
+			$photoDesc ="<b>Ciao io Glenda. Non Posso Esserti Utile Attualmente.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
@@ -43,18 +43,18 @@ if (strpos($a, 'Giada') !== false) {
 			
 		case 'Nothing':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>oOxygen non è qui mi dispiace.</b> /n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			$photoDesc ="<b>oOxygen non è qui mi dispiace.</b>\n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'NothingHere':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>oOxy non c'è!</b> /n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			$photoDesc ="<b>oOxy non c'è!</b> \n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 		case 'NothingHereGiada':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>Ti Vogliamo Bene Giada</b> /n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			$photoDesc ="<b>Ti Vogliamo Bene Giada</b> \n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
