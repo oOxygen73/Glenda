@@ -23,11 +23,6 @@ if (strpos($a, 'oxy') !== false) {
 	$Message = 'NothingHere';
 }
 
-if (strpos($a, 'Oxy') !== false) {
-    //echo 'true';
-	$Message = 'HereNothing';
-}
-	
 	switch ($Message)
 	{
 		case '/start':
@@ -48,11 +43,6 @@ if (strpos($a, 'Oxy') !== false) {
 			
 		case 'NothingHere':
 			$message_body = "<b>oOxy non c'è mi dispiace, non so piu come dirvelo</b>";
-			sendMessageParseHtml($ChatID, $message_body);
-			break;
-			
-		case 'HereNothing':
-			$message_body = "<b>oOxy non c'è mi dispiace.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
