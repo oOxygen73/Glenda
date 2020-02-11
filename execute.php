@@ -13,7 +13,7 @@
 	
 	$a = $Message;
 
-if (strpos($a, 'oOxygen_Tech') !== false) {
+if (strpos($a, '@oOxygen_Tech') !== false) {
     //echo 'true';
 	$Message = 'Nothing';
 }
@@ -40,13 +40,13 @@ if (strpos($a, 'oxy') !== false) {
 		case 'Nothing':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
 			$photoDesc ="<b>oOxygen non c'è! Non taggatelo, Grazie.</b>";
-			sendMessageImageAndLinks($ChatID, $message_body);
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'NothingHere':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
 			$photoDesc ="<b>oOxy non c'è mi dispiace, non so piu come dirvelo</b>";
-			sendMessageImageAndLinks($ChatID, $message_body);
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'Glenda':
