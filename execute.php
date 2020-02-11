@@ -43,13 +43,13 @@ if (strpos($a, 'Giada') !== false) {
 			
 		case 'Nothing':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>oOxygen non è qui mi dispiace.</b>\n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
+			$photoDesc ="<b>oOxygen non è qui mi dispiace, ma ha lasciato questo per qualcuno</b>\n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'NothingHere':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>oOxy non c'è!</b> \n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
+			$photoDesc ="<b>oOxy non è qui ma ha lasciato questo per qualcuno.</b> \n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 		case 'NothingHereGiada':
