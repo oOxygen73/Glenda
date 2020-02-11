@@ -65,13 +65,13 @@ if (strpos($a, 'Giada') !== false) {
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
-		case 'Links':
+		case 'Buongiorno':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
 			$photoDesc ="<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 
-		case 'Tools': // Command to show normal Keyboard
+		case 'buongiorno': // Command to show normal Keyboard
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
 			$photoDesc ="<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
