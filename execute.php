@@ -23,29 +23,57 @@ if (strpos($a, 'oxy') !== false) {
 	$Message = 'NothingHere';
 }
 
+if (strpos($a, 'Giada') !== false) {
+    //echo 'true';
+	$Message = 'NothingHereGiada';
+}
 	switch ($Message)
 	{
 		case '/start':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
 			$photoDesc ="<b>Ciao io Sono Regan MacNeil. Non Posso Esserti Utile.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
+		case 'Menu':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			break;
+			
 		case 'Nothing':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>oOxygen non è qui mi dispiace.</b>";
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<b>oOxygen non è qui mi dispiace.</b> /n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'NothingHere':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>oOxy non c'è mi dispiace, non so piu come dirvelo!</b>";
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<b>oOxy non c'è!</b> /n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			break;
+		case 'NothingHereGiada':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<b>Ti Vogliamo Bene Giada</b> /n<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
+			
 		case 'Glenda':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Exorcist.jpg"; 
-			$photoDesc ="<b>Io Sono Regan MacNeil non Glenda. \nNon Posso Esserti Utile e non Evocarmi.</b>";
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			break;
+			
+		case 'Links':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			break;
+
+		case 'Tools': // Command to show normal Keyboard
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
+			$photoDesc ="<a href='http://insane3d.ooxygen.tech/Glenda_Bot/Song.mp3'>4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 
