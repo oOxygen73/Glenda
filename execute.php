@@ -17,6 +17,16 @@ if (strpos($a, '@oOxygen_Tech') !== false) {
     //echo 'true';
 	$Message = 'Nothing';
 }
+
+if (strpos($a, 'oxy') !== false) {
+    //echo 'true';
+	$Message = 'NothingHere';
+}
+
+if (strpos($a, 'Oxy') !== false) {
+    //echo 'true';
+	$Message = 'HereNothing';
+}
 	
 	switch ($Message)
 	{
@@ -33,6 +43,16 @@ if (strpos($a, '@oOxygen_Tech') !== false) {
 			
 		case 'Nothing':
 			$message_body = "<b>oOxygen non c'è! Non taggatelo, Grazie.</b>";
+			sendMessageParseHtml($ChatID, $message_body);
+			break;
+			
+		case 'NothingHere':
+			$message_body = "<b>oOxy non c'è mi dispiace, non so piu come dirvelo</b>";
+			sendMessageParseHtml($ChatID, $message_body);
+			break;
+			
+		case 'HereNothing':
+			$message_body = "<b>oOxy non c'è mi dispiace.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
