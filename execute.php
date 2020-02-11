@@ -13,7 +13,7 @@
 	
 	$a = $Message;
 
-if (strpos($a, 'oxy') !== false) {
+if (strpos($a, '@oOxygen_Tech') !== false) {
     //echo 'true';
 	$Message = 'Nothing';
 }
@@ -32,8 +32,8 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 			
 		case 'Nothing':
-			$msg = "<b>oOxygen NON c'è!</b>";
-			showKeyboard($ChatID, $msg);
+			$message_body = "<b>oOxygen non c'è! Non taggatelo, Grazie.</b>";
+			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
 		case 'Glenda':
