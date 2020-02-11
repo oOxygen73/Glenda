@@ -11,6 +11,13 @@
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
 	
+	$a = $Message;
+
+if (strpos($a, 'oxy') !== false) {
+    //echo 'true';
+	$Message = 'Nothing';
+}
+	
 	switch ($Message)
 	{
 		case '/start':
@@ -21,6 +28,11 @@
 			
 		case 'Menu':
 			$msg = "<b>Menu Attivato!</b>";
+			showKeyboard($ChatID, $msg);
+			break;
+			
+		case 'Nothing':
+			$msg = "<b>oOxygen NON c'è!</b>";
 			showKeyboard($ChatID, $msg);
 			break;
 			
