@@ -35,48 +35,22 @@ if (strpos($a, 'Giada') !== false) {
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
-		case 'Menu':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
-			break;
-			
 		case 'Nothing':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>oOxygen non è qui mi dispiace, ma ha lasciato questo per qualcuno</b>\n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			$message_body = "<b>oOxygen non è qui mi dispiace</b>";
+			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
 		case 'NothingHere':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>oOxy non è qui ma ha lasciato questo per qualcuno.</b> \n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			$message_body = "<b>oOxy non è qui mi dispiace. Non so quando tornerà.</b>";
+			sendMessageParseHtml($ChatID, $message_body);
 			break;
+			
 		case 'NothingHereGiada':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<b>Ti Vogliamo Bene Giada</b> \n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
+			$photoUrl ="https://qtxasset.com/styles/breakpoint_xl_880px_w/s3/fiercebiotech/1524486911/connor-wells-534089-unsplash.jpg/connor-wells-534089-unsplash.jpg?DVTQDUgYO.8vRuzd1u95rWWO_kGdMfnN&itok=wY5WM4BN"; 
+			$photoDesc ="<b>Ti Vogliamo Bene Giadina! Torna presto!</b> \n<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
-			
-		case 'Glenda':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
-			break;
-			
-		case 'Links':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
-			break;
-
-		case 'Tools': // Command to show normal Keyboard
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Giada.jpg"; 
-			$photoDesc ="<a href='http://ooxygen.tech/Song.mp3'>Only_4You</a>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
-			break;
-
 		case "Inline Keyboard": // This is the same text inside a Keyboard
 			$msg = "Abracadabra and inline keyboard will appear!";
 			inlineKeyboard($ChatID, $msg);
