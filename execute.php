@@ -13,17 +13,17 @@
 	
 	$a = $Message;
 
-if (strpos($a, '@oOxygen_Tech') !== false) {
+if (strpos($a, '@oRxygen_Tech') !== false) {
     //echo 'true';
 	$Message = 'Nothing';
 }
 
-if (strpos($a, 'oxy') !== false) {
+if (strpos($a, 'ory') !== false) {
     //echo 'true';
 	$Message = 'NothingHere';
 }
 
-if (strpos($a, 'Giada') !== false) {
+if (strpos($a, 'Giiiada') !== false) {
     //echo 'true';
 	$Message = 'NothingHereGiada';
 }
