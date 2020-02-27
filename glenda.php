@@ -10,6 +10,7 @@
 	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
+	$message = isset($update['message']) ? $update['message'] : "";
 	header("Content-Type: application/json");
 	$a = $Message;
 
@@ -102,7 +103,7 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 	} 
 	
-if(isset($msg['voice']))
+if(isset($message['voice']))
 {
 			$message_body = "<b>Non posso sentire messaggi audio purtroppo</b>";
 			sendMessageParseHtml($ChatID, $message_body);
