@@ -47,8 +47,14 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 			
 		case 'Glenda':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda.jpg"; 
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
+			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			break;
+			
+		case 'test':
+			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
+			$photoDesc ="<b>Ciao $FirstName io Sono Glenda.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
