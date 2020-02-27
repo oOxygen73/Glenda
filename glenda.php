@@ -10,11 +10,10 @@
 	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
-	$message = isset($update['message']) ? $update['message'] : "";
 
 	$a = $Message;
     // the array
-$messageArray = array("Ciao!", "Scusa non ho tempo.","Cosa vuoi?", "Sono stanca!");
+    $messageArray = array("Ciao!", "Scusa non ho tempo.","Cosa vuoi?", "Sono stanca!");
 
 if (strpos($a, 'oOxygen_Tech') !== false) {
     //echo 'true';
@@ -52,7 +51,9 @@ if (strpos($a, 'oxy') !== false) {
 		case 'Glenda':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			// get random index from array $arrX
-            $photoDesc = array_rand($messageArray);
+			$randIndex = array_rand($messageArray);
+            $photoDesc = $arrX[$randIndex];
+			
 			//$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
