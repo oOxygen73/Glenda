@@ -14,4 +14,4 @@ if(! $chatId || ! $text) {
 }
 
 header("Content-Type: application/json");
-echo json_encode(['chat_id' => $chatId, 'text' => $text, 'method' => 'sendMessage']);
+echo json_encode(['chat_id' => $chatId, 'username' => $username, 'method' => 'sendMessage']);
