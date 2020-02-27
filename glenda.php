@@ -9,8 +9,7 @@ if (!$update) {
 
 $chatId = $update['message']['chat']['id'] ?? null;
 $text = $update['message']['text'] ?? 'Inserire un testo valido';
-$FirstName = isset($message['chat']['first_name']);
-
+$FirstName = $update['chat']['first_name'] ?? null;
 $parameters = [];
 
 $parameters['chat_id'] = $chatId;
