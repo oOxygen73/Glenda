@@ -3,14 +3,25 @@
 	$botToken = "959465967:AAGL96nATh_YOb6E6mVXigx24PMr4iNan04"; // Api TOKEN to our bot
 	$website = "https://api.telegram.org/bot".$botToken;
 
-	$FilejSon = file_get_contents("php://input"); // Take the url input, in this case will be executed method getUpdates that return Update.
-	$FilejSon = json_decode($FilejSon, TRUE); // Decode the variable before because now we can search with key (because it's a dictionary)
+	$content = file_get_contents("php://input");
+	$update = json_decode($content, true);
+if(!$update)
+{
+  exit;
+}
 
-	$FirstName = $FilejSon["message"]["chat"]["first_name"]; // Get the name that user set
-	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
-	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
-    $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
-	
+$Message = isset($update['message']) ? $update['message'] : "";
+$messageId = isset($message['message_id']) ? $message['message_id'] : "";
+$ChatID = isset($message['chat']['id']) ? $message['chat']['id'] : "";
+$FirstName = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
+$lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
+$username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
+$date = isset($message['date']) ? $message['date'] : "";
+$text = isset($message['text']) ? $message['text'] : "";
+
+$text = trim($text);
+$text = strtolower($text);
+header("Content-Type: application/json");
 	$a = $Message;
 
 if (strpos($a, 'oOxygen_Tech') !== false) {
