@@ -52,7 +52,7 @@ if (strpos($a, 'oxy') !== false) {
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			// get random index from array $arrX
 			$randIndex = array_rand($messageArray);
-            $photoDesc = $arrX[$randIndex];
+            $photoDesc = $messageArray[$randIndex];
 			
 			//$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
