@@ -99,14 +99,15 @@ if (strpos($a, 'oxy') !== false) {
 		default:
 			//$msg = "Unknown Command!";
 			//sendMessage($ChatID, $msg);
+			break;
+	} 
+	
+
 if(isset($message['voice']))
 {
 			$message_body = "<b>Non posso sentire messaggi audio purtroppo</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 }
-			break;
-	} 
-	
 
 	function sendMessage($chat_id, $text)
 	{
