@@ -8,10 +8,10 @@ if(! $update) {
 
 $chatId = $update['message']['chat']['id'] ?? null;
 $text = $update['message']['text'] ?? null;
-$username = $update["message"]["chat"]["first_name"] ?? null;
+$FirstName = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
 if(! $chatId || ! $text) {
 	exit;
 }
 
 header("Content-Type: application/json");
-echo json_encode(['chat_id' => $chatId, 'first_name' => $username, 'text' => $text, 'method' => 'sendMessage']);
+echo json_encode(['chat_id' => $chatId, 'first_name' => $FirstName, 'text' => $text, 'method' => 'sendMessage']);
