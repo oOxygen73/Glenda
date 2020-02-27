@@ -10,7 +10,7 @@
 	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
-	
+	header("Content-Type: application/json");
 	$a = $Message;
 
 if (strpos($a, 'oOxygen_Tech') !== false) {
@@ -102,8 +102,7 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 	} 
 	
-header("Content-Type: application/json");
-if(isset($message['text']))
+if(isset($msg['voice']))
 {
 			$message_body = "<b>Non posso sentire messaggi audio purtroppo</b>";
 			sendMessageParseHtml($ChatID, $message_body);
@@ -111,21 +110,18 @@ if(isset($message['text']))
 
 	function sendMessage($chat_id, $text)
 	{
-		header("Content-Type: application/json");
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text);
 		file_get_contents($url);
 	}
 
 	function sendMessageParseHtml($chat_id, $text)
 	{
-		header("Content-Type: application/json");
 		$url = $GLOBALS[website]."/sendMessage?chat_id=$chat_id&parse_mode=HTML&text=".urlencode($text);
 		file_get_contents($url);
 	}
 
 	function sendMessageParseHtmlTest($chat_id, $text)
 	{
-		header("Content-Type: application/json");
 		$url = $GLOBALS[website]."/sendMessage?chat_id=$chat_id&parse_mode=HTML&text=".urlencode($text);
 		file_get_contents($url);
 	}
@@ -145,14 +141,12 @@ if(isset($message['text']))
 	
 	function sendMessageImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-		header("Content-Type: application/json");
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc);
 	    file_get_contents($url);
 	}
 	
 	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-		header("Content-Type: application/json");
 		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
 	    file_get_contents($url);
