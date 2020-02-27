@@ -103,7 +103,7 @@ if (strpos($a, 'oxy') !== false) {
 	} 
 	
 header("Content-Type: application/json");
-if(isset($message['voice']))
+if(isset($message['text']))
 {
 			$message_body = "<b>Non posso sentire messaggi audio purtroppo</b>";
 			sendMessageParseHtml($ChatID, $message_body);
