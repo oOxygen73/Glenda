@@ -8,6 +8,7 @@ if(! $update) {
 
 $chatId = $update['message']['chat']['id'] ?? null;
 $text = $update['message']['text'] ?? null;
+$username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 
 if(! $chatId || ! $text) {
 	exit;
