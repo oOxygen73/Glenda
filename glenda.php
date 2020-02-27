@@ -55,5 +55,3 @@
         $url = $GLOBALS[website]./sendMessage?chat_id=.$chat_id.&text=.urlencode($text).$jSonCodeKeyboard;
         file_get_contents($url);
     }
-
-?>
