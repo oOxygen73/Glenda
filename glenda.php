@@ -54,7 +54,7 @@ if (strpos($a, 'oxy') !== false) {
 			
 		case 'test':
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
-			$photoDesc ="<b>Ciao $FirstName io Sono Glenda.</b>";
+			$photoDesc ="<b>Ciao $GLOBALS[FirstName]! io Sono Glenda.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
