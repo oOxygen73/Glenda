@@ -6,7 +6,7 @@
 	$FilejSon = file_get_contents("php://input"); // Take the url input, in this case will be executed method getUpdates that return Update.
 	$FilejSon = json_decode($FilejSon, TRUE); // Decode the variable before because now we can search with key (because it's a dictionary)
 
-	$FirstName = $FilejSon["message"]["channel_post"]["first_name"]; // Get the name that user set
+	$FirstName = $FilejSon["message"]["chat"]["first_name"]; // Get the name that user set
 	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
