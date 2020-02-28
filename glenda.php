@@ -10,7 +10,11 @@
 	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
-    $FirstName = $FilejSon["message"]["from"]["first_name"];
+    
+	$myId = $FilejSon["message"]["from"]["id"];
+	$FirstName = $FilejSon["message"]["from"]["first_name"];
+	$LastName = $FilejSon["message"]["from"]["last_name"];
+    $Username = $FilejSon["message"]["from"]["username"];
 	
 	$a = $Message;
     // the array
@@ -74,6 +78,11 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 
 		case "INFOS":
 			$message_body = "<b>Piacere $FirstName, Sono Glenda un Utility Bot Creato per Questo Gruppo.</b>";
+			sendMessageParseHtml($ChatID, $message_body);
+			break;
+			
+		case "IO":
+			$message_body = "<b>Queste Sono le Info che ho su di te.\n ID: $myId \n Nome: $FirstName \n Cognome: $LastName \n Username: $Username</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
