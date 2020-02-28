@@ -21,7 +21,6 @@ $dump = json_encode($update, JSON_PRETTY_PRINT);
 
 echo json_encode(
     [
-        'chat_id' => $chatId, 
         'text' => "\n$dump\n", 
         'method' => 'sendMessage', 
         'parse_mode' => 'markdown'
