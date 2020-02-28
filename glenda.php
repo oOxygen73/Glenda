@@ -82,7 +82,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case "IO":
-			$message_body = "<b>Queste Sono le Info che ho su di te.\n ID: $myId \n Nome: $FirstName \n Cognome: $LastName \n Username: $Username</b>";
+			$message_body = "<b>Queste Sono le Info che ho su di te.\nID: $myId \nNome: $FirstName \nCognome: $LastName \nUsername: $Username</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
