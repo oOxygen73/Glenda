@@ -10,7 +10,7 @@
 	$ChatID = $FilejSon["message"]["chat"]["id"]; // get the User ID, this is unique
 	$Message = $FilejSon["message"]["text"]; // Get the message sent from user
     $messageId = $FilejSon["message"]["message_id"]; // get the User ID, this is unique
-$FirstName = $FilejSon["from"]["first_name"];
+$FirstName = $FilejSon["message"]["from"]["first_name"];
 	$a = $Message;
     // the array
     $messageArray = array("<b>Ciao!</b>", "<b>Scusa non ho tempo.</b>","<b>Cosa vuoi?</b>", "<b>Sono stanca!</b>", "<b>Oggi ho un diavolo per ogni Bit!</b>");
