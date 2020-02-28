@@ -14,17 +14,17 @@
 	
 	$a = $Message;
     // the array
-    $messageArray = array("<b>Ciao $FirstName!</b>", "<b>$FirstName Scusa ma non ho tempo.</b>","<b>Cosa vuoi $FirstName?</b>", "<b>$FirstName Sono stanca!</b>", "<b>$FirstName Oggi ho un diavolo per ogni Bit!</b>");
+    $messageArray = array("<b>Ciao $FirstName!</b>", "<b>Scusa ma non ho tempo $FirstName.</b>","<b>$FirstName Cosa vuoi?</b>", "<b>Oggi sono stanca $FirstName!</b>", "<b>Oggi ho un diavolo per ogni Bit $FirstName!</b>");
 
 if (strpos($a, 'oOxygen_Tech') !== false) {
     //echo 'true';
 	$Message = 'Nothing';
 }
 
-if (strpos($a, 'oxy') !== false) {
+//if (strpos($a, 'oxy') !== false) {
     //echo 'true';
-	$Message = 'NothingHere';
-}
+	//$Message = 'NothingHere';
+//}
 
 	switch (strtoupper($Message)) //Trasforma la stringa tutta in maiuscolo
 	{
@@ -35,12 +35,12 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 			
 		case 'MENU':
-			$msg = "<b>Menu Attivato!</b>";
+			$msg = "<b>$FirstName ti ho Attivato il Menu!</b>";
 			showKeyboard($ChatID, $msg);
 			break;
 			
 		case 'NOTHING':
-			$message_body = "<b>oOxygen non c'è! Non taggatelo, Grazie.</b>";
+			$message_body = "<b>Ciao $FirstName, non so Dove è il mio Capo, poco fa era qui in Giro.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
@@ -73,7 +73,7 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 
 		case "INFOS":
-			$message_body = "<b>Sono Glenda un Utility Bot Creato per Questo Gruppo. \nApri una Chat con Me in Privato.</b>";
+			$message_body = "<b>Piacere $FirstName, Sono Glenda un Utility Bot Creato per Questo Gruppo.</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
@@ -89,7 +89,17 @@ if (strpos($a, 'oxy') !== false) {
 			break;
 
 		case 'BUONGIORNO':
-			$message_body = "<b>Buongiorno io Sono Glenda. \nPuoi Attivarmi Digitando il mio Nome.</b>";
+			$message_body = "<b>Buongiorno a te $FirstName</b>";
+			sendMessageParseHtml($ChatID, $message_body);
+			break;
+			
+		case 'CIAO':
+			$message_body = "<b>Ciao $FirstName</b>";
+			sendMessageParseHtml($ChatID, $message_body);
+			break;
+			
+		case 'BUONANOTTE':
+			$message_body = "<b>Buonanotte $FirstName, Dormi Bene</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
