@@ -149,7 +149,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 	    file_get_contents($url);
 	}
 
-	function deleteMessage($chat_id, $querymsgid) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	function deleteMessage($chat_id, $messageId) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
 	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=$messageId";
         file_get_contents($url);
