@@ -174,3 +174,4 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
 	    file_get_contents($url);
 	}
+
