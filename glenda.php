@@ -17,8 +17,8 @@
     $Username = $FilejSon["message"]["from"]["username"];
 	
 	$UserLanguage = $FilejSon["message"]["from"]["language_code"];
-	$RegisteredAt = $FilejSon["message"]["from"]["created_at"];
-	$LastVisit = $FilejSon["message"]["from"]["updated_at"];
+	$RegisteredAt = $FilejSon["message"]["from"]["location"];
+	$LastVisit = $FilejSon["message"]["from"]["all_members_are_administrators"];
 	
 	$a = $Message;
     // the array
@@ -86,7 +86,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case "IO":
-			$message_body = "<b>Queste Sono le Info che ho su di te.\nID: $myId \nNome: $FirstName \nCognome: $LastName \nUsername: $Username \nLa tua Lingua: $UserLanguage \nRegistrato il: $RegisteredAt \nUltima Visita il: $LastVisit</b>";
+			$message_body = "<b>Queste Sono le Info che ho su di te.\nID: $myId \nNome: $FirstName \nCognome: $LastName \nUsername: $Username \nLa tua Lingua: $UserLanguage \nLocation: $RegisteredAt \nIs Admin: $LastVisit</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
