@@ -158,7 +158,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 
 	function showKeyboard($chat_id, $text)
 	{
-		$jSonCodeKeyboard = '&callback_data={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = 'callback_data={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
 	}
