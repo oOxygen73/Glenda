@@ -151,7 +151,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 
 	function deleteMessage($chat_id, $messageId) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=$messageId";
+	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=$messageId - 1";
         file_get_contents($url);
 	}
 
@@ -174,4 +174,3 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
 	    file_get_contents($url);
 	}
-
