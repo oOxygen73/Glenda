@@ -18,7 +18,7 @@
 	
 	$UserLanguage = $FilejSon["message"]["from"]["language_code"];
 	$RegisteredAt = $FilejSon["message"]["chat"]["new_chat_members"];
-	$LastVisit = $FilejSon["message"]["from"]["all_members_are_administrators"];
+	$LastVisit = $FilejSon["message"]["chat"]["all_members_are_administrators"];
 	
 	$a = $Message;
     // the array
