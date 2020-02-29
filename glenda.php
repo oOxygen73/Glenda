@@ -23,7 +23,7 @@
 	$a = $Message;
     // the array
     $messageArray = array("<b>Ciao $FirstName!</b>", "<b>Scusa ma non ho tempo $FirstName.</b>","<b>$FirstName Cosa vuoi?</b>", "<b>Oggi sono stanca $FirstName!</b>", "<b>Oggi ho un diavolo per ogni Bit $FirstName!</b>");
-$this->getTelegram()->isAdmin();
+//$this->getTelegram()->isAdmin();
 
 if (isAdmin($myId))
 {
