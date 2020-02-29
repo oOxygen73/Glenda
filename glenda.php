@@ -55,7 +55,6 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case 'GLENDA':
-		    deleteMessage($ChatID, $messageId);
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			// get random index from array $arrX
 			$randIndex = array_rand($messageArray);
@@ -64,6 +63,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			
 			//$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
 			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
+			deleteMessage($ChatID, $messageId);
 			break;
 			
 		case 'LINKS':
@@ -151,7 +151,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 
 	function deleteMessage($chat_id, $querymsgid) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=last";
+	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=$messageId";
         file_get_contents($url);
 	}
 
