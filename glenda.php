@@ -150,7 +150,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 
 	function showKeyboard($chat_id, $text)
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links \xF0\x9F\x98\x83", "Tools \xF0\x9F\x98\x83"],["Infos","Help"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = 'reply_markup={"keyboard":[["Links"\xF0\x9F\x98\x83, "Tools"\xF0\x9F\x98\x83],["Infos","Help"]],"resize_keyboard":true}';
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
 	}
@@ -163,7 +163,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 	
 	function sendStartImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = 'reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
 	    $url = $GLOBALS[website]."/sendPhoto?chat_id=".$chat_id."&photo=".$photoUrl."&caption=".urlencode($photoDesc).$jSonCodeKeyboard;
 	    file_get_contents($url);
 	}
