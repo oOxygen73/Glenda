@@ -118,7 +118,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case 'CIAO':
-			$message_body = "<b>Ciao $FirstName</b>";
+			$message_body = "<b>Ciao $FirstName \xF0\x9F\x98\x83</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
