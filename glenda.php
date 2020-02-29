@@ -55,6 +55,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case 'GLENDA':
+		    deleteMessage($ChatID, $messageId);
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			// get random index from array $arrX
 			$randIndex = array_rand($messageArray);
@@ -148,9 +149,15 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 	    file_get_contents($url);
 	}
 
+	function deleteMessage($chat_id, $querymsgid) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
+	{
+	    $url = $GLOBALS[website]."/deleteMessage?chat_id=$ChatID&message_id=last";
+        file_get_contents($url);
+	}
+
 	function showKeyboard($chat_id, $text)
 	{
-		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links"\xF0\x9F\x98\x83, "Tools"\xF0\x9F\x98\x83],["Infos","Help"]],"resize_keyboard":true}';
+		$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
 		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
 		file_get_contents($url);
 	}
