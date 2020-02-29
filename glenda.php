@@ -25,15 +25,6 @@
     $messageArray = array("<b>Ciao $FirstName!</b>", "<b>Scusa ma non ho tempo $FirstName.</b>","<b>$FirstName Cosa vuoi?</b>", "<b>Oggi sono stanca $FirstName!</b>", "<b>Oggi ho un diavolo per ogni Bit $FirstName!</b>");
 //$this->getTelegram()->isAdmin();
 
-if (isAdmin($myId))
-{
-$bc = 'vero';
-}
-
-if (!isAdmin($myId))
-{
-$bc = 'falso';
-}
 
 if (strpos($a, 'oOxygen_Tech') !== false) {
     //echo 'true';
