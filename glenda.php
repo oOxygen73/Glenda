@@ -15,16 +15,11 @@
 	$FirstName = $FilejSon["message"]["from"]["first_name"];
 	$LastName = $FilejSon["message"]["from"]["last_name"];
     $Username = $FilejSon["message"]["from"]["username"];
-	
 	$UserLanguage = $FilejSon["message"]["from"]["language_code"];
-	$RegisteredAt = $FilejSon["message"]["chat"]["new_chat_members"];
-	$LastVisit = $FilejSon["message"]["from"]["all_members_are_administrators"];
 	
 	$a = $Message;
     // the array
     $messageArray = array("<b>Ciao $FirstName!</b>", "<b>Scusa ma non ho tempo $FirstName.</b>","<b>$FirstName Cosa vuoi?</b>", "<b>Oggi sono stanca $FirstName!</b>", "<b>Oggi ho un diavolo per ogni Bit $FirstName!</b>");
-//$this->getTelegram()->isAdmin();
-
 
 if (strpos($a, 'oOxygen_Tech') !== false) {
     //echo 'true';
@@ -88,7 +83,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case "IO":
-			$message_body = "<b>Queste Sono le Info che ho su di te.\nID: $myId \nNome: $FirstName \nCognome: $LastName \nUsername: $Username \nLa tua Lingua: $UserLanguage \nIs Bot: $RegisteredAt \nIs Admin: $bc</b>";
+			$message_body = "<b>Queste Sono le Info che ho su di te.\nID: $myId \nNome: $FirstName \nCognome: $LastName \nUsername: $Username \nLa tua Lingua è: $UserLanguage</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 
@@ -104,12 +99,12 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 
 		case 'BUONGIORNO':
-			$message_body = "<b>Buongiorno a te $FirstName</b>";
+			$message_body = "<b>Buongiorno a te $FirstName \xF0\x9F\x98\x83</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
 		case 'CIAO':
-			$message_body = "<b>Ciao $FirstName \xF0\x9F\x98\x83</b>";
+			$message_body = "<b>Ciao $FirstName</b>";
 			sendMessageParseHtml($ChatID, $message_body);
 			break;
 			
