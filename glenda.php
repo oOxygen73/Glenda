@@ -40,6 +40,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case 'MENU':
+		    deleteMessage($ChatID, $messageId);
 			$msg = "<b>$FirstName ti ho Attivato il Menu!</b>";
 			showKeyboard($ChatID, $msg);
 			break;
@@ -55,7 +56,6 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case 'GLENDA':
-		deleteMessage($ChatID, $messageId);
 			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			// get random index from array $arrX
 			$randIndex = array_rand($messageArray);
