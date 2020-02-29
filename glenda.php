@@ -156,12 +156,19 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
         file_get_contents($url);
 	}
 
+	//function showKeyboard($chat_id, $text)
+	//{
+		//$jSonCodeKeyboard = '&reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
+		//$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
+		//file_get_contents($url);
+	//}
+	
 	function showKeyboard($chat_id, $text)
-	{
-		$jSonCodeKeyboard = '$reply_markup={"keyboard":[["Links", "Tools"],["Infos","Help"]],"resize_keyboard":true}';
-		$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
-		file_get_contents($url);
-	}
+{
+$jSonCodeKeyboard = '&reply_markup={"keyboard":[["🐇%20Conigli%20🐇"]],"resize_keyboard":true,"one_time_keyboard":false}';
+$url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&text=".urlencode($text).$jSonCodeKeyboard;
+file_get_contents($url);
+}
 	
 	function sendMessageImage($chat_id, $photoUrl, $photoDesc) // This is an useless type of this keyboard, in a specific Tutorial I show an useful usage of this keyboard.
 	{
