@@ -165,7 +165,7 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 	
 	function showKeyboard($chat_id, $text)
     {
-       $jSonCodeKeyboard = '&reply_markup={"keyboard":[["Conigli","prova \ud83d\ude08","\xF0\x9F\x98\x82"]],"resize_keyboard":true,"one_time_keyboard":false}';
+       $jSonCodeKeyboard = '&reply_markup={"keyboard":[["Conigli","prova \ud83d\ude08","\u2622"]],"resize_keyboard":true,"one_time_keyboard":false}';
        $url = $GLOBALS[website]."/sendMessage?chat_id=".$chat_id."&parse_mode=HTML&text=".urlencode($text).$jSonCodeKeyboard;
        file_get_contents($url);
     }
