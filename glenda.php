@@ -55,15 +55,15 @@ if (strpos($a, 'oOxygen_Tech') !== false) {
 			break;
 			
 		case 'GLENDA':
-			$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
+		deleteMessage($ChatID, $messageId);
+			///$photoUrl ="http://ooxygen.tech/Glenda_Bot/Glenda2.0.jpg"; 
 			// get random index from array $arrX
-			$randIndex = array_rand($messageArray);
+			///$randIndex = array_rand($messageArray);
 			//$messageArray[$randIndex[1]];
-            $photoDesc = $messageArray[$randIndex];
+            ///$photoDesc = $messageArray[$randIndex];
 			
 			//$photoDesc ="<b>Ciao $FirstName io Sono Glenda. \nCome Posso Esserti Utile? \nPuoi Aprire una Chat Privata con me se Vuoi.</b>";
-			sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
-			deleteMessage($ChatID, $messageId);
+			///sendMessageImageAndLinks($ChatID, $photoUrl, $photoDesc);
 			break;
 			
 		case 'LINKS':
