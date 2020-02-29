@@ -17,7 +17,7 @@
     $Username = $FilejSon["message"]["from"]["username"];
 	
 	$UserLanguage = $FilejSon["message"]["from"]["language_code"];
-	$RegisteredAt = $FilejSon["message"]["from"]["is_bot"];
+	$RegisteredAt = $FilejSon["message"]["from"]["new_chat_members"];
 	$LastVisit = $FilejSon["message"]["from"]["all_members_are_administrators"];
 	
 	$a = $Message;
